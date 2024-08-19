@@ -1,0 +1,164 @@
+﻿using RmSharp;
+
+namespace RxSharp.Tests
+{
+    [TestClass]
+    public class TroopsFile
+    {
+        private readonly byte[] _rubyMarshalData = File.ReadAllBytes( Path.Combine( "Data", "Troops.rxdata" ) );
+
+        private readonly List<RxSharp.Rpg.Troop> _expectedInstance = new List<RxSharp.Rpg.Troop>
+        {
+            null,
+            new RxSharp.Rpg.Troop { ID = 1, Name = "Ghost*2", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 1, X = 271, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 1, X = 369, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = [] } } } } },
+            new RxSharp.Rpg.Troop { ID = 2, Name = "Ghost*3", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 1, X = 222, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 1, X = 320, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 1, X = 418, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = new List<dynamic>() } } } } },
+            new RxSharp.Rpg.Troop { ID = 3, Name = "Basilisk*2", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 2, X = 266, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 2, X = 374, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = [] } } } } },
+            new RxSharp.Rpg.Troop { ID = 4, Name = "Basilisk*3", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 2, X = 212, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 2, X = 320, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 2, X = 428, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = new List<dynamic>() } } } } },
+            new RxSharp.Rpg.Troop { ID = 5, Name = "Sahagin*2", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 3, X = 261, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 3, X = 379, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = [] } } } } },
+            new RxSharp.Rpg.Troop { ID = 6, Name = "Sahagin*3", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 3, X = 202, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 3, X = 320, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 3, X = 438, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = new List<dynamic>() } } } } },
+            new RxSharp.Rpg.Troop { ID = 7, Name = "Hellhound*2", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 4, X = 268, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 4, X = 372, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = [] } } } } },
+            new RxSharp.Rpg.Troop { ID = 8, Name = "Hellhound*3", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 4, X = 216, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 4, X = 320, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 4, X = 424, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = new List<dynamic>() } } } } },
+            new RxSharp.Rpg.Troop { ID = 9, Name = "Cobold*2", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 5, X = 267, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 5, X = 373, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = [] } } } } },
+            new RxSharp.Rpg.Troop { ID = 10, Name = "Cobold*3", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 5, X = 214, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 5, X = 320, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 5, X = 426, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = new List<dynamic>() } } } } },
+            new RxSharp.Rpg.Troop { ID = 11, Name = "Cockatrice*2", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 6, X = 270, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 6, X = 370, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = [] } } } } },
+            new RxSharp.Rpg.Troop { ID = 12, Name = "Cockatrice*3", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 6, X = 220, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 6, X = 320, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 6, X = 420, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = new List<dynamic>() } } } } },
+            new RxSharp.Rpg.Troop { ID = 13, Name = "Imp*2", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 7, X = 271, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 7, X = 369, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = [] } } } } },
+            new RxSharp.Rpg.Troop { ID = 14, Name = "Imp*3", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 7, X = 222, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 7, X = 320, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 7, X = 418, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = new List<dynamic>() } } } } },
+            new RxSharp.Rpg.Troop { ID = 15, Name = "Angel*2", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 8, X = 267, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 8, X = 373, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = [] } } } } },
+            new RxSharp.Rpg.Troop { ID = 16, Name = "Angel*3", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 8, X = 214, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 8, X = 320, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 8, X = 426, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = new List<dynamic>() } } } } },
+            new RxSharp.Rpg.Troop { ID = 17, Name = "Zombie*2", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 9, X = 252, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 9, X = 388, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = [] } } } } },
+            new RxSharp.Rpg.Troop { ID = 18, Name = "Zombie*3", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 9, X = 184, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 9, X = 320, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 9, X = 456, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = new List<dynamic>() } } } } },
+            new RxSharp.Rpg.Troop { ID = 19, Name = "Lamia*2", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 10, X = 249, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 10, X = 391, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = [] } } } } },
+            new RxSharp.Rpg.Troop { ID = 20, Name = "Lamia*3", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 10, X = 178, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 10, X = 320, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 10, X = 462, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = new List<dynamic>() } } } } },
+            new RxSharp.Rpg.Troop { ID = 21, Name = "Lizardman*2", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 11, X = 242, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 11, X = 398, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = [] } } } } },
+            new RxSharp.Rpg.Troop { ID = 22, Name = "Lizardman*3", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 11, X = 164, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 11, X = 320, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 11, X = 476, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = new List<dynamic>() } } } } },
+            new RxSharp.Rpg.Troop { ID = 23, Name = "Kerberos*2", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 12, X = 248, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 12, X = 392, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = [] } } } } },
+            new RxSharp.Rpg.Troop { ID = 24, Name = "Kerberos*3", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 12, X = 176, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 12, X = 320, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 12, X = 464, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = new List<dynamic>() } } } } },
+            new RxSharp.Rpg.Troop { ID = 25, Name = "Goblin*2", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 13, X = 246, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 13, X = 394, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = [] } } } } },
+            new RxSharp.Rpg.Troop { ID = 26, Name = "Goblin*3", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 13, X = 172, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 13, X = 320, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 13, X = 468, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = new List<dynamic>() } } } } },
+            new RxSharp.Rpg.Troop { ID = 27, Name = "Harpy*2", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 14, X = 250, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 14, X = 390, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = [] } } } } },
+            new RxSharp.Rpg.Troop { ID = 28, Name = "Harpy*3", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 14, X = 180, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 14, X = 320, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 14, X = 460, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = new List<dynamic>() } } } } },
+            new RxSharp.Rpg.Troop { ID = 29, Name = "Gargoyle*2", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 15, X = 243, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 15, X = 397, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = [] } } } } },
+            new RxSharp.Rpg.Troop { ID = 30, Name = "Gargoyle*3", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 15, X = 166, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 15, X = 320, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 15, X = 474, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = new List<dynamic>() } } } } },
+            new RxSharp.Rpg.Troop { ID = 31, Name = "Archangel*2", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 16, X = 251, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 16, X = 389, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = [] } } } } },
+            new RxSharp.Rpg.Troop { ID = 32, Name = "Archangel*3", Members = new List<RxSharp.Rpg.TroopMember> { new RxSharp.Rpg.TroopMember { EnemyID = 16, X = 182, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 16, X = 320, Y = 304, Hidden = false, Immortal = false }, new RxSharp.Rpg.TroopMember { EnemyID = 16, X = 458, Y = 304, Hidden = false, Immortal = false } }, Pages = new List<RxSharp.Rpg.TroopPage> { new RxSharp.Rpg.TroopPage { Condition = new RxSharp.Rpg.TroopPageCondition { TurnValid = false, EnemyValid = false, ActorValid = false, SwitchValid = false, TurnA = 0, TurnB = 0, EnemyIndex = 0, EnemyHP = 50, ActorID = 1, ActorHD = 50, SwitchID = 1 }, Span = 0, List = new List<RxSharp.Rpg.EventCommand> { new RxSharp.Rpg.EventCommand { Code = 0, Indent = 0, Parameters = new List<dynamic>() } } } } }
+        };
+
+
+
+        [TestMethod]
+        public void Read( )
+        {
+            using ( var ms = new MemoryStream( _rubyMarshalData ) )
+            {
+                var results = RmSerialiser.Deserialise<List<RxSharp.Rpg.Troop>>( ms );
+
+                //var json = System.Text.Json.JsonSerializer.Serialize( results );
+
+                Assert.IsNotNull( results );
+                //Assert.IsTrue( results.Count == _expectedInstance.Count );
+
+                //for ( var i = 0; i < results.Count; i++ )
+                //{
+                //    var expected = _expectedInstance[i];
+                //    var result = results[i];
+                //    CompareObjects( expected, result );
+                //}
+            }
+        }
+
+        private void CompareObjects( RxSharp.Rpg.Troop expectedValue, RxSharp.Rpg.Troop result )
+        {
+            if ( expectedValue == null && result == null )
+                return;
+
+            Assert.IsNotNull( result );
+            Assert.IsInstanceOfType( result, typeof( RxSharp.Rpg.Troop ) );
+
+            Assert.AreEqual( expectedValue.ID, result.ID, $"Mismatch in {nameof( expectedValue.ID )}" );
+            Assert.AreEqual( expectedValue.Name, result.Name, $"Mismatch in {nameof( expectedValue.Name )}" );
+
+            // Compare Members list
+            Assert.AreEqual( expectedValue.Members.Count, result.Members.Count, $"Mismatch in {nameof( expectedValue.Members )} count" );
+            for ( int i = 0; i < expectedValue.Members.Count; i++ )
+            {
+                var expectedMember = expectedValue.Members[i];
+                var resultMember = result.Members[i];
+                Assert.AreEqual( expectedMember.EnemyID, resultMember.EnemyID, $"Mismatch in {nameof( expectedMember.EnemyID )} at index {i}" );
+                Assert.AreEqual( expectedMember.X, resultMember.X, $"Mismatch in {nameof( expectedMember.X )} at index {i}" );
+                Assert.AreEqual( expectedMember.Y, resultMember.Y, $"Mismatch in {nameof( expectedMember.Y )} at index {i}" );
+                Assert.AreEqual( expectedMember.Hidden, resultMember.Hidden, $"Mismatch in {nameof( expectedMember.Hidden )} at index {i}" );
+                Assert.AreEqual( expectedMember.Immortal, resultMember.Immortal, $"Mismatch in {nameof( expectedMember.Immortal )} at index {i}" );
+            }
+
+            // Compare Pages list
+            Assert.AreEqual( expectedValue.Pages.Count, result.Pages.Count, $"Mismatch in {nameof( expectedValue.Pages )} count" );
+            for ( int i = 0; i < expectedValue.Pages.Count; i++ )
+            {
+                var expectedPage = expectedValue.Pages[i];
+                var resultPage = result.Pages[i];
+
+                // Compare Condition
+                Assert.AreEqual( expectedPage.Condition.TurnValid, resultPage.Condition.TurnValid, $"Mismatch in {nameof( expectedPage.Condition.TurnValid )} at page index {i}" );
+                Assert.AreEqual( expectedPage.Condition.EnemyValid, resultPage.Condition.EnemyValid, $"Mismatch in {nameof( expectedPage.Condition.EnemyValid )} at page index {i}" );
+                Assert.AreEqual( expectedPage.Condition.ActorValid, resultPage.Condition.ActorValid, $"Mismatch in {nameof( expectedPage.Condition.ActorValid )} at page index {i}" );
+                Assert.AreEqual( expectedPage.Condition.SwitchValid, resultPage.Condition.SwitchValid, $"Mismatch in {nameof( expectedPage.Condition.SwitchValid )} at page index {i}" );
+                Assert.AreEqual( expectedPage.Condition.TurnA, resultPage.Condition.TurnA, $"Mismatch in {nameof( expectedPage.Condition.TurnA )} at page index {i}" );
+                Assert.AreEqual( expectedPage.Condition.TurnB, resultPage.Condition.TurnB, $"Mismatch in {nameof( expectedPage.Condition.TurnB )} at page index {i}" );
+                Assert.AreEqual( expectedPage.Condition.EnemyIndex, resultPage.Condition.EnemyIndex, $"Mismatch in {nameof( expectedPage.Condition.EnemyIndex )} at page index {i}" );
+                Assert.AreEqual( expectedPage.Condition.EnemyHP, resultPage.Condition.EnemyHP, $"Mismatch in {nameof( expectedPage.Condition.EnemyHP )} at page index {i}" );
+                Assert.AreEqual( expectedPage.Condition.ActorID, resultPage.Condition.ActorID, $"Mismatch in {nameof( expectedPage.Condition.ActorID )} at page index {i}" );
+                Assert.AreEqual( expectedPage.Condition.ActorHD, resultPage.Condition.ActorHD, $"Mismatch in {nameof( expectedPage.Condition.ActorHD )} at page index {i}" );
+                Assert.AreEqual( expectedPage.Condition.SwitchID, resultPage.Condition.SwitchID, $"Mismatch in {nameof( expectedPage.Condition.SwitchID )} at page index {i}" );
+
+                Assert.AreEqual( expectedPage.Span, resultPage.Span, $"Mismatch in {nameof( expectedPage.Span )} at page index {i}" );
+
+                // Compare List of events
+                Assert.AreEqual( expectedPage.List.Count, resultPage.List.Count, $"Mismatch in {nameof( expectedPage.List )} count at page index {i}" );
+                for ( int j = 0; j < expectedPage.List.Count; j++ )
+                {
+                    var expectedEvent = expectedPage.List[j];
+                    var resultEvent = resultPage.List[j];
+                    Assert.AreEqual( expectedEvent.Code, resultEvent.Code, $"Mismatch in {nameof( expectedEvent.Code )} at event index {j} on page {i}" );
+                    Assert.AreEqual( expectedEvent.Indent, resultEvent.Indent, $"Mismatch in {nameof( expectedEvent.Indent )} at event index {j} on page {i}" );
+                    CollectionAssert.AreEqual( expectedEvent.Parameters, resultEvent.Parameters, $"Mismatch in {nameof( expectedEvent.Parameters )} at event index {j} on page {i}" );
+                }
+            }
+        }
+
+        [TestMethod]
+        public void Write( )
+        {
+            byte[] writtenData;
+
+            using ( var memoryStream = new MemoryStream( ) )
+            {
+                RmSerialiser.Serialise( memoryStream, _expectedInstance );
+
+                writtenData = memoryStream.ToArray( );
+
+                Assert.AreEqual( writtenData.Length, _rubyMarshalData.Length );
+            }
+
+            using ( var memoryStream2 = new MemoryStream( writtenData ) )
+            {
+                var results = RmSerialiser.Deserialise<List<RxSharp.Rpg.Troop>>( memoryStream2 );
+
+                Assert.IsNotNull( results );
+                Assert.IsTrue( results.Count == _expectedInstance.Count );
+
+                for ( var i = 0; i < results.Count; i++ )
+                {
+                    var expected = _expectedInstance[i];
+                    var result = results[i];
+                    CompareObjects( expected, result );
+                }
+            }
+
+            var writePath = Path.Combine( "Output", "Troops.rxdata" );
+            Directory.CreateDirectory( "Output" );
+            File.WriteAllBytes( writePath, writtenData );
+            Console.WriteLine( writePath );
+        }
+    }
+}

@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFrameworks>net8.0;net6.0;</TargetFrameworks>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+	<LangVersion>latest</LangVersion>
+  </PropertyGroup>
+	
+  <PropertyGroup>
+	  <PackageId>RxSharp</PackageId>
+	  <Version>0.0.1</Version>
+	  <Authors>optimus-code</Authors>
+	  <Product>RxSharp</Product>
+	  <Description>RxSharp is a .NET library for loading RMXP Ruby Marshal format files.</Description>
+	  <PackageTags>rxsharp;library;ruby;marshal;rxdata;rmxp</PackageTags>
+	  <RepositoryUrl>https://github.com/optimus-code/RxSharp</RepositoryUrl>
+	  <RepositoryType>git</RepositoryType>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageProjectUrl>https://github.com/optimus-code/RxSharp</PackageProjectUrl>
+	  <PackageIconUrl>https://raw.githubusercontent.com/optimus-code/RxSharp/main/icon.png</PackageIconUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RmSharp" Version="0.0.2" />
+  </ItemGroup>
+
+</Project>
