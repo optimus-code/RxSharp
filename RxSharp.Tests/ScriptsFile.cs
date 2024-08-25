@@ -74,7 +74,7 @@ namespace RxSharp.Tests
                 writtenData = memoryStream.ToArray( );
 
                 // ZLib defaults differ slightly but it doesn't seem to matter - results in a slightly different length
-                //Assert.AreEqual( writtenData.Length, _rubyMarshalData.Length );
+                //Assert.AreEqual( _rubyMarshalData.Length, writtenData.Length );
             }
 
             using ( var memoryStream2 = new MemoryStream( writtenData ) )

@@ -1,0 +1,160 @@
+﻿{
+  "Dummy": 7829367,
+  "MagicNumber": 46695438,
+  "PartyMembers": [ 1, 2, 7, 8 ],
+  "Elements": [ "", "Fire", "Ice", "Thunder", "Water", "Earth", "Wind", "Light", "Darkness", "vs Undead", "vs Snake", "vs Aquatic", "vs Beast", "vs Goblin", "vs Bird", "vs Devil", "vs Angel" ],
+  "Switches": [ null, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+  "Variables": [ null, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+  "WindowskinName": "001-Blue01",
+  "TitleName": "001-Title01",
+  "GameoverName": "001-Gameover01",
+  "BattleTransition": "003-Blind03",
+  "TitleBGM": {
+    "Name": "064-Slow07",
+    "Volume": 100,
+    "Pitch": 100
+  },
+  "BattleBGM": {
+    "Name": "001-Battle01",
+    "Volume": 100,
+    "Pitch": 100
+  },
+  "BattleEndME": {
+    "Name": "001-Victory01",
+    "Volume": 100,
+    "Pitch": 100
+  },
+  "GameoverME": {
+    "Name": "005-Defeat01",
+    "Volume": 100,
+    "Pitch": 100
+  },
+  "CursorSE": {
+    "Name": "001-System01",
+    "Volume": 80,
+    "Pitch": 100
+  },
+  "DecisionSE": {
+    "Name": "002-System02",
+    "Volume": 80,
+    "Pitch": 100
+  },
+  "CancelSE": {
+    "Name": "003-System03",
+    "Volume": 80,
+    "Pitch": 100
+  },
+  "BuzzerSE": {
+    "Name": "004-System04",
+    "Volume": 80,
+    "Pitch": 100
+  },
+  "EquipSE": {
+    "Name": "005-System05",
+    "Volume": 80,
+    "Pitch": 100
+  },
+  "ShopSE": {
+    "Name": "006-System06",
+    "Volume": 80,
+    "Pitch": 100
+  },
+  "SaveSE": {
+    "Name": "007-System07",
+    "Volume": 80,
+    "Pitch": 100
+  },
+  "LoadSE": {
+    "Name": "008-System08",
+    "Volume": 80,
+    "Pitch": 100
+  },
+  "BattleStartSE": {
+    "Name": "009-System09",
+    "Volume": 80,
+    "Pitch": 100
+  },
+  "EscapeSE": {
+    "Name": "010-System10",
+    "Volume": 80,
+    "Pitch": 100
+  },
+  "ActorCollapseSE": {
+    "Name": "011-System11",
+    "Volume": 80,
+    "Pitch": 100
+  },
+  "EnemyCollapseSE": {
+    "Name": "012-System12",
+    "Volume": 80,
+    "Pitch": 100
+  },
+  "Words": {
+    "Gold": "G",
+    "HP": "HP",
+    "SP": "SP",
+    "Str": "STR",
+    "Dex": "DEX",
+    "Agi": "AGI",
+    "Int": "INT",
+    "Atk": "ATK",
+    "PDef": "PDEF",
+    "MDef": "MDEF",
+    "Weapon": "Weapon",
+    "Armor1": "Shield",
+    "Armor2": "Helmet",
+    "Armor3": "Body Armor",
+    "Armor4": "Accessory",
+    "Attack": "Attack",
+    "Skill": "Skill",
+    "Guard": "Defend",
+    "Item": "Item",
+    "Equip": "Equip"
+  },
+  "TestBattlers": [
+    {
+      "ActorID": 1,
+      "Level": 1,
+      "WeaponID": 1,
+      "Armor1ID": 1,
+      "Armor2ID": 5,
+      "Armor3ID": 13,
+      "Armor4ID": 0
+    },
+    {
+      "ActorID": 2,
+      "Level": 1,
+      "WeaponID": 5,
+      "Armor1ID": 1,
+      "Armor2ID": 5,
+      "Armor3ID": 13,
+      "Armor4ID": 0
+    },
+    {
+      "ActorID": 7,
+      "Level": 1,
+      "WeaponID": 25,
+      "Armor1ID": 0,
+      "Armor2ID": 9,
+      "Armor3ID": 21,
+      "Armor4ID": 0
+    },
+    {
+      "ActorID": 8,
+      "Level": 1,
+      "WeaponID": 29,
+      "Armor1ID": 0,
+      "Armor2ID": 9,
+      "Armor3ID": 21,
+      "Armor4ID": 0
+    }
+  ],
+  "TestTroopID": 1,
+  "StartMapID": 1,
+  "StartX": 9,
+  "StartY": 7,
+  "BattlebackName": "003-Forest01",
+  "BattlerName": "001-Fighter01",
+  "BattlerHue": 0,
+  "EditMapID": 1
+}

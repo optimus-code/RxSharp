@@ -1,4 +1,5 @@
 ﻿using RmSharp.Attributes;
+using RxSharp.Converters;
 using System.Collections.Generic;
 
 namespace RxSharp.Rpg
@@ -34,16 +35,34 @@ namespace RxSharp.Rpg
         public int EncounterStep { get; set; } = 30;
 
         [RmName( "data" )]
-        public int[,,] Data { get; set; }
+        [RmBuffer<TableConverter>( "Table" )]
+        public List<List<List<short>>> Data { get; set; }
 
         [RmName( "events" )]
         public Dictionary<int, Event> Events { get; set; } = new Dictionary<int, Event>( );
+
+        public Map( )
+        {
+        }
 
         public Map( int width, int height )
         {
             Width = width;
             Height = height;
-            Data = new int[width, height, 3];
+            List<List<List<short>>> Data = new List<List<List<short>>>( );
+
+            for ( var x = 0; x < width; x++ )
+            {
+                var yList = new List<List<short>>( );
+
+                for ( var y = 0; y < height; y++ )
+                {
+                    var zList = new List<short>( new short[3] ); // Initialize with 3 elements (all set to 0)
+                    yList.Add( zList );
+                }
+
+                Data.Add( yList );
+            }
         }
     }
 }

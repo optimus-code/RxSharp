@@ -147,7 +147,7 @@ namespace RxSharp.Tests.Rpg
 
                 byte[] writtenData = memoryStream.ToArray( );
 
-                Assert.AreEqual( writtenData.Length, _rubyMarshalData.Length );
+                Assert.AreEqual( _rubyMarshalData.Length, writtenData.Length );
 
                 var result = ReadObject( converter, writtenData );
 

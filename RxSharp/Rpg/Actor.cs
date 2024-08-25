@@ -1,5 +1,7 @@
 ﻿using RmSharp;
 using RmSharp.Attributes;
+using RxSharp.Converters;
+using System.Collections.Generic;
 
 namespace RxSharp.Rpg
 {
@@ -40,7 +42,8 @@ namespace RxSharp.Rpg
         public int BattlerHue { get; set; } = 0;
 
         [RmName( "parameters" )]
-        public int[,] Parameters { get; set; } = new int[6, 100];
+        [RmBuffer<TableConverter>( "Table" )]
+        public List<List<short>> Parameters { get; set; }
 
         [RmName( "weapon_id" )]
         public int WeaponID { get; set; } = 0;
@@ -74,15 +77,33 @@ namespace RxSharp.Rpg
 
         public Actor( )
         {
-            // Initialize Parameters based on the given formula in Ruby code
-            for ( int i = 1; i <= 99; i++ )
+            Parameters = new List<List<short>>( );
+
+            // Loop for each parameter set (total 6)
+            for ( int p = 0; p < 6; p++ )
             {
-                Parameters[0, i] = 500 + i * 50;
-                Parameters[1, i] = 500 + i * 50;
-                Parameters[2, i] = 50 + i * 5;
-                Parameters[3, i] = 50 + i * 5;
-                Parameters[4, i] = 50 + i * 5;
-                Parameters[5, i] = 50 + i * 5;
+                List<short> values = new List<short>( );
+
+                // Loop from 1 to 99 to populate each parameter set
+                for ( int i = 1; i <= 99; i++ )
+                {
+                    short value;
+
+                    // Determine value based on the current parameter set (p)
+                    if ( p == 0 || p == 1 )
+                    {
+                        value = ( short ) ( 500 + i * 50 );
+                    }
+                    else
+                    {
+                        value = ( short ) ( 50 + i * 5 );
+                    }
+
+                    values.Add( value );
+                }
+
+                // Add the populated values list to the Parameters list
+                Parameters.Add( values );
             }
         }
     }

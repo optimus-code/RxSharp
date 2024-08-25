@@ -1,4 +1,5 @@
 ﻿using RmSharp.Attributes;
+using RxSharp.Converters;
 using System.Collections.Generic;
 
 namespace RxSharp.Rpg
@@ -55,10 +56,12 @@ namespace RxSharp.Rpg
         public int Animation2ID { get; set; } = 0;
 
         [RmName( "element_ranks" )]
-        public int[] ElementRanks { get; set; } = new int[1];
+        [RmBuffer<TableConverter>( "Table" )]
+        public List<short> ElementRanks { get; set; }
 
         [RmName( "state_ranks" )]
-        public int[] StateRanks { get; set; } = new int[1];
+        [RmBuffer<TableConverter>( "Table" )]
+        public List<short> StateRanks { get; set; }
 
         [RmName( "actions" )]
         public List<EnemyAction> Actions { get; set; } = new List<EnemyAction> { new EnemyAction( ) };

@@ -1,0 +1,10 @@
+﻿{
+  "1": {
+    "Name": "MAP001",
+    "ParentID": 0,
+    "Order": 1,
+    "Expanded": false,
+    "ScrollX": 320,
+    "ScrollY": 240
+  }
+}

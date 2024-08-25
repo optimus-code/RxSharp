@@ -1,0 +1,251 @@
+[
+  null,
+  {
+    "ID": 1,
+    "Name": "Fighter",
+    "Position": 0,
+    "WeaponSet": [ 1, 2, 3, 4 ],
+    "ArmorSet": [ 1, 2, 3, 4, 5, 6, 7, 8, 13, 14, 15, 16, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30, 31, 32 ],
+    "ElementRanks": [ 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ],
+    "StateRanks": [ 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ],
+    "Learnings": [
+      {
+        "Level": 1,
+        "SkillID": 57
+      },
+      {
+        "Level": 9,
+        "SkillID": 58
+      },
+      {
+        "Level": 17,
+        "SkillID": 59
+      },
+      {
+        "Level": 25,
+        "SkillID": 60
+      }
+    ]
+  },
+  {
+    "ID": 2,
+    "Name": "Lancer",
+    "Position": 0,
+    "WeaponSet": [ 5, 6, 7, 8 ],
+    "ArmorSet": [ 1, 2, 3, 4, 5, 6, 7, 8, 13, 14, 15, 16, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30, 31, 32 ],
+    "ElementRanks": [ 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ],
+    "StateRanks": [ 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ],
+    "Learnings": [
+      {
+        "Level": 1,
+        "SkillID": 61
+      },
+      {
+        "Level": 9,
+        "SkillID": 62
+      },
+      {
+        "Level": 17,
+        "SkillID": 63
+      },
+      {
+        "Level": 25,
+        "SkillID": 64
+      }
+    ]
+  },
+  {
+    "ID": 3,
+    "Name": "Warrior",
+    "Position": 0,
+    "WeaponSet": [ 9, 10, 11, 12 ],
+    "ArmorSet": [ 1, 2, 3, 4, 5, 6, 7, 8, 13, 14, 15, 16, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30, 31, 32 ],
+    "ElementRanks": [ 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ],
+    "StateRanks": [ 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ],
+    "Learnings": [
+      {
+        "Level": 1,
+        "SkillID": 65
+      },
+      {
+        "Level": 9,
+        "SkillID": 66
+      },
+      {
+        "Level": 17,
+        "SkillID": 67
+      },
+      {
+        "Level": 25,
+        "SkillID": 68
+      }
+    ]
+  },
+  {
+    "ID": 4,
+    "Name": "Thief",
+    "Position": 1,
+    "WeaponSet": [ 13, 14, 15, 16 ],
+    "ArmorSet": [ 5, 6, 7, 8, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30, 31, 32 ],
+    "ElementRanks": [ 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ],
+    "StateRanks": [ 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ],
+    "Learnings": [
+      {
+        "Level": 1,
+        "SkillID": 69
+      },
+      {
+        "Level": 9,
+        "SkillID": 70
+      },
+      {
+        "Level": 17,
+        "SkillID": 71
+      },
+      {
+        "Level": 25,
+        "SkillID": 72
+      }
+    ]
+  },
+  {
+    "ID": 5,
+    "Name": "Hunter",
+    "Position": 1,
+    "WeaponSet": [ 17, 18, 19, 20 ],
+    "ArmorSet": [ 5, 6, 7, 8, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30, 31, 32 ],
+    "ElementRanks": [ 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ],
+    "StateRanks": [ 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ],
+    "Learnings": [
+      {
+        "Level": 1,
+        "SkillID": 73
+      },
+      {
+        "Level": 9,
+        "SkillID": 74
+      },
+      {
+        "Level": 17,
+        "SkillID": 75
+      },
+      {
+        "Level": 25,
+        "SkillID": 76
+      }
+    ]
+  },
+  {
+    "ID": 6,
+    "Name": "Gunner",
+    "Position": 1,
+    "WeaponSet": [ 21, 22, 23, 24 ],
+    "ArmorSet": [ 5, 6, 7, 8, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30, 31, 32 ],
+    "ElementRanks": [ 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ],
+    "StateRanks": [ 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ],
+    "Learnings": [
+      {
+        "Level": 1,
+        "SkillID": 77
+      },
+      {
+        "Level": 9,
+        "SkillID": 78
+      },
+      {
+        "Level": 17,
+        "SkillID": 79
+      },
+      {
+        "Level": 25,
+        "SkillID": 80
+      }
+    ]
+  },
+  {
+    "ID": 7,
+    "Name": "Cleric",
+    "Position": 2,
+    "WeaponSet": [ 25, 26, 27, 28 ],
+    "ArmorSet": [ 9, 10, 11, 12, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 ],
+    "ElementRanks": [ 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ],
+    "StateRanks": [ 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ],
+    "Learnings": [
+      {
+        "Level": 1,
+        "SkillID": 1
+      },
+      {
+        "Level": 13,
+        "SkillID": 2
+      },
+      {
+        "Level": 29,
+        "SkillID": 3
+      },
+      {
+        "Level": 5,
+        "SkillID": 4
+      },
+      {
+        "Level": 21,
+        "SkillID": 5
+      },
+      {
+        "Level": 25,
+        "SkillID": 6
+      },
+      {
+        "Level": 17,
+        "SkillID": 53
+      },
+      {
+        "Level": 9,
+        "SkillID": 54
+      }
+    ]
+  },
+  {
+    "ID": 8,
+    "Name": "Mage",
+    "Position": 2,
+    "WeaponSet": [ 29, 30, 31, 32 ],
+    "ArmorSet": [ 9, 10, 11, 12, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 ],
+    "ElementRanks": [ 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ],
+    "StateRanks": [ 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 ],
+    "Learnings": [
+      {
+        "Level": 1,
+        "SkillID": 7
+      },
+      {
+        "Level": 13,
+        "SkillID": 11
+      },
+      {
+        "Level": 29,
+        "SkillID": 15
+      },
+      {
+        "Level": 5,
+        "SkillID": 36
+      },
+      {
+        "Level": 21,
+        "SkillID": 38
+      },
+      {
+        "Level": 25,
+        "SkillID": 42
+      },
+      {
+        "Level": 9,
+        "SkillID": 46
+      },
+      {
+        "Level": 17,
+        "SkillID": 52
+      }
+    ]
+  }
+]

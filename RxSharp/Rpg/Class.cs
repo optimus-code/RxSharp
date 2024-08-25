@@ -1,4 +1,5 @@
 ﻿using RmSharp.Attributes;
+using RxSharp.Converters;
 using System.Collections.Generic;
 
 namespace RxSharp.Rpg
@@ -22,10 +23,12 @@ namespace RxSharp.Rpg
         public List<int> ArmorSet { get; set; } = new List<int>( );
 
         [RmName( "element_ranks" )]
-        public int[] ElementRanks { get; set; } = new int[1];
+        [RmBuffer<TableConverter>( "Table" )]
+        public List<short> ElementRanks { get; set; } = [0];
 
         [RmName( "state_ranks" )]
-        public int[] StateRanks { get; set; } = new int[1];
+        [RmBuffer<TableConverter>( "Table" )]
+        public List<short> StateRanks { get; set; } = [0];
 
         [RmName( "learnings" )]
         public List<ClassLearning> Learnings { get; set; } = new List<ClassLearning>( );

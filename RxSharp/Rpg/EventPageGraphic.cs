@@ -2,7 +2,7 @@
 
 namespace RxSharp.Rpg
 {
-    [RmName( "RPG::Event::Page:Graphic" )]
+    [RmName( "RPG::Event::Page::Graphic" )]
     public class EventPageGraphic
     {
         [RmName( "tile_id" )]

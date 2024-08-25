@@ -1,5 +1,5 @@
 ﻿using RmSharp.Attributes;
-using System.Drawing;
+using RxSharp.Converters;
 
 namespace RxSharp.Rpg
 {
@@ -16,6 +16,7 @@ namespace RxSharp.Rpg
         public int FlashScope { get; set; } = 0;
 
         [RmName( "flash_color" )]
+        [RmConverter<ColorConverter>]
         public Color FlashColor { get; set; } = Color.FromArgb( 255, 255, 255, 255 );
 
         [RmName( "flash_duration" )]

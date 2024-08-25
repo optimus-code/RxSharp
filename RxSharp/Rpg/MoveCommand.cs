@@ -12,6 +12,10 @@ namespace RxSharp.Rpg
         [RmName( "parameters" )]
         public List<object> Parameters { get; set; } = new List<object>( );
 
+        public MoveCommand( )
+        {
+        }
+
         public MoveCommand( int code = 0, List<object> parameters = null )
         {
             Code = code;

@@ -1,4 +1,6 @@
 ﻿using RmSharp.Attributes;
+using RxSharp.Converters;
+using System.Collections.Generic;
 
 namespace RxSharp.Rpg
 {
@@ -48,17 +50,20 @@ namespace RxSharp.Rpg
         public string BattlebackName { get; set; } = "";
 
         [RmName( "passages" )]
-        public int[] Passages { get; set; } = new int[384];
+        [RmBuffer<TableConverter>( "Table" )]
+        public List<short> Passages { get; set; }
 
         [RmName( "priorities" )]
-        public int[] Priorities { get; set; } = new int[384];
+        [RmBuffer<TableConverter>( "Table" )]
+        public List<short> Priorities { get; set; }
 
         [RmName( "terrain_tags" )]
-        public int[] TerrainTags { get; set; } = new int[384];
+        [RmBuffer<TableConverter>( "Table" )]
+        public List<short> TerrainTags { get; set; }
 
         public Tileset( )
         {
-            Priorities[0] = 5;
+            //Priorities[0] = 5;
         }
     }
 }

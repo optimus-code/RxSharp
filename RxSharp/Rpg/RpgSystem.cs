@@ -6,6 +6,13 @@ namespace RxSharp.Rpg
     [RmName( "RPG::System" )]
     public class RpgSystem
     {
+        [RmName( "_" )]
+        public long Dummy
+        {
+            get;
+            set;
+        } = 7829367;
+
         [RmName( "magic_number" )]
         public int MagicNumber { get; set; } = 0;
 

@@ -1,4 +1,6 @@
 ﻿using RmSharp.Attributes;
+using RxSharp.Converters;
+using System.Collections.Generic;
 
 namespace RxSharp.Rpg
 {
@@ -9,6 +11,7 @@ namespace RxSharp.Rpg
         public int CellMax { get; set; } = 0;
 
         [RmName( "cell_data" )]
-        public int[,] CellData { get; set; } = new int[0, 0];
+        [RmBuffer<TableConverter>( "Table" )]
+        public List<List<short>> CellData { get; set; }
     }
 }
