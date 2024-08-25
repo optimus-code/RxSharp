@@ -22,9 +22,7 @@
   </PropertyGroup>
 	
   <ItemGroup>
-    <Reference Include="RmSharp">
-      <HintPath>..\..\RmSharp\RmSharp\bin\Debug\net8.0\RmSharp.dll</HintPath>
-    </Reference>
+    <PackageReference Include="RmSharp" Version="0.0.4" />
   </ItemGroup>
 
 </Project>

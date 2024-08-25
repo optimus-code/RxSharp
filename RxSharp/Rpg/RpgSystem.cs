@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace RxSharp.Rpg
 {
     [RmName( "RPG::System" )]
-    public class RpgSystem
+    public class RpgSystem : ISingleInstanceFile
     {
         [RmName( "_" )]
         public long Dummy

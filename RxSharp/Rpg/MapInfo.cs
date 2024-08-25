@@ -3,7 +3,7 @@
 namespace RxSharp.Rpg
 {
     [RmName( "RPG::MapInfo" )]
-    public class MapInfo
+    public class MapInfo : IDictionaryFile
     {
         [RmName( "name" )]
         public string Name { get; set; } = "";

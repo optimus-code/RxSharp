@@ -1,6 +1,6 @@
 ﻿namespace RxSharp.Rpg
 {
-    public class Script
+    public class Script : IListFile
     {
         public int MagicNumber
         {

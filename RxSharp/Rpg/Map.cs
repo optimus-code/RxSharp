@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace RxSharp.Rpg
 {
     [RmName( "RPG::Map" )]
-    public class Map
+    public class Map : ISingleInstanceFile
     {
         [RmName( "tileset_id" )]
         public int TilesetID { get; set; } = 1;
