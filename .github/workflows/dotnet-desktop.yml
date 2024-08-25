@@ -46,11 +46,6 @@ jobs:
     - name: Pack NuGet package
       run: dotnet pack --configuration Release --no-build --output ./nupkg ./RxSharp/RxSharp.csproj
     
-    - name: Publish NuGet package to GitHub Packages
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: dotnet nuget push ./nupkg/*.nupkg -k ${{ secrets.GITHUB_TOKEN }} --skip-duplicate -s https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
-
     - name: Publish NuGet package to nuget.org
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
