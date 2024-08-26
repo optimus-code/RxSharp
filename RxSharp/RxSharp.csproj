@@ -9,7 +9,7 @@
 	
   <PropertyGroup>
 	  <PackageId>RxSharp</PackageId>
-	  <Version>0.0.2</Version>
+	  <Version>0.0.3</Version>
 	  <Authors>optimus-code</Authors>
 	  <Product>RxSharp</Product>
 	  <Description>RxSharp is a .NET library for loading RMXP Ruby Marshal format files.</Description>
